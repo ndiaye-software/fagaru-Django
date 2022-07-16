@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Consultations</title>
+</head>
+<body>
+
+	<!--nav-->
+
+	<header>
+       <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+         </label>
+         <label class="logo">FAGARU</label>
+            <ul>
+                <li><a  href="../../patient">HOME</a></li>
+               <li><a  href="../rendezvous">Rendez - vous</a></li>
+                <li><a  href="../consultations">Consultations</a></li>
+               <li><a href="../profil">Profil</a></li>
+               <li><a class="active" href="">Contactez-nous</a></li>
+
+            </ul>
+      </nav>
+   </header>
+
+	<!--contact-->
+
+	<section>
+
+	<div class="container">
+		<div class="contact-box">
+			<div class="left">
+				<img src="{% static 'image/cont.svg' %}" height="300px" width="350px">
+			</div>
+			<div class="right">
+					<h2>Contactez-nous</h2>
+					<input type="text" class="field" placeholder="Votre nom">
+					<input type="email" class="field" placeholder="Votre mail">
+					<input type="text" class="field" placeholder="Votre numéro">
+					<textarea class="field area" placeholder="Message"></textarea>
+					<button class="btn"> Envoyer </button>
+			</div>
+		</div>
+	</div>
+
+	</section>
+
+
+
+	<!-- Footer -->
+
+	<footer class = "footer" id="NosCoordonnées">
+	    <div class = "container">
+	        <div class="row">
+
+	            <div class="footer-col">
+	                <h4>Réseaux sociaux</h4>
+	                <div class="socials-links">
+	                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+	                    <a href="#"><i class="fab fa-twitter"></i></a>
+	                    <a href="#"><i class="fab fa-instagram"></i></a>
+	                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+	                </div>
+	            </div>
+
+	            <div class="footer-col">
+	                <h4>A propos</h4>
+	                <ul>
+	                    <li><a href="../créateur">Créateurs du site</a></li>
+	                    <li><a href="#">Nos partenaires</a></li>
+	                </ul>
+	            </div>
+
+
+	        </div>
+	    </div>
+
+
+	</footer>
+
+</body>
+</html>

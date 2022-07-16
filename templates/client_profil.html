@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/client_profil.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Profil</title>
+</head>
+<body>
+<header>
+       <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+         </label>
+         <label class="logo">FAGARU</label>
+            <ul>
+                <li><a   href="../../patient">HOME</a></li>
+               <li><a  href="../rendezvous">Rendez - vous</a></li>
+                <li><a href="../consultations">Consultations</a></li>
+               <li><a class="active" href="">Profil</a></li>
+               <li><a href="../contact">Contactez-nous</a></li>
+
+            </ul>
+      </nav>
+</header>
+
+<main>
+     <div class="section1">
+
+        <img src="{% static 'image/profil.svg' %}" height="300px" width="350px">
+
+      <div>
+
+         <h1>Gérez votre profil médical</h1>
+
+
+      </div>
+
+   </div>
+</main>
+
+</body>
+
+<!-- Footer -->
+
+<footer class = "footer" id="NosCoordonnées">
+    <div class = "container">
+        <div class="row">
+
+            <div class="footer-col">
+                <h4>Réseaux sociaux</h4>
+                <div class="socials-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>A propos</h4>
+                <ul>
+                    <li><a href="../créateur">Créateurs du site</a></li>
+                    <li><a href="#">Nos partenaires</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>

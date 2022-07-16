@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/client_rdv.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Rendez_vous</title>
+</head>
+<body>
+
+<header>
+       <nav>
+         <input type="checkbox" id="check">
+         <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+         </label>
+         <label class="logo">FAGARU</label>
+            <ul>
+                <li><a href="../../patient">HOME</a></li>
+               <li><a class="active" href="">Rendez - vous</a></li>
+                <li><a href="../consultations">Consultations</a></li>
+               <li><a href="../profil">Profil</a></li>
+               <li><a href="../contact">Contactez-nous</a></li>
+
+            </ul>
+      </nav>
+</header>
+
+<main>
+
+    <div class="section1">
+
+        <img src="{% static 'image/rdv.svg' %}" height="300px" width="350px">
+
+        <div>
+
+         <h1>Choisissez vos rendez-vous</h1>
+
+        </div>
+
+   </div>
+
+    <div class="section2">
+        <div class="filtres">
+            <input type="text" name="name" placeholder="Médecin">
+            <select>
+                <option>Service</option>
+            </select>
+            <select>
+                <option>Région</option>
+            </select>
+            <input id="theDate" type="date" name="date" value="date">
+            <input type="time" name="heure" value="09:00">
+            <div class="search"><i class="fas fa-search"></i></div>
+        </div>
+        <div class="content">
+            <div class="contain">
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-hospital"></i> Nom de l'établissement</div>
+			<div class="inf"> <i class="fa-solid fa-user-doctor"></i> Nom du docteur</div>
+		</div>
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-address-card"></i> Contact</div>
+			<div class="inf"> <i class="fa-solid fa-money-bill"></i> Tarif</div>
+		</div>
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-location-dot"></i> Localisation</div>
+			<div class="inf"> <i class="fa-solid fa-clock"></i> Horaires</div>
+		</div>
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-suitcase-medical"></i> Service</div>
+		</div>
+		<hr>
+		<div class="button">
+			<button class="take">PRENDRE</button>
+		</div>
+	</div>
+            <div class="contain">
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-hospital"></i> Nom de l'établissement</div>
+			<div class="inf"> <i class="fa-solid fa-user-doctor"></i> Nom du docteur</div>
+		</div>
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-address-card"></i> Contact</div>
+			<div class="inf"> <i class="fa-solid fa-money-bill"></i> Tarif</div>
+		</div>
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-location-dot"></i> Localisation</div>
+			<div class="inf"> <i class="fa-solid fa-clock"></i> Horaires</div>
+		</div>
+		<div class="items">
+			<div class="inf"> <i class="fa-solid fa-suitcase-medical"></i> Service</div>
+		</div>
+		<hr>
+		<div class="button">
+			<button class="take">PRENDRE</button>
+		</div>
+	</div>
+        </div>
+
+
+    </div>
+
+
+
+
+   <!-- Section de choix des boutons -->
+
+
+</main>
+
+</body>
+
+<!-- Footer -->
+
+<footer class = "footer" id="NosCoordonnées">
+    <div class = "container">
+        <div class="row">
+
+            <div class="footer-col">
+                <h4>Réseaux sociaux</h4>
+                <div class="socials-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>A propos</h4>
+                <ul>
+                    <li><a href="../créateur">Créateurs du site</a></li>
+                    <li><a href="#">Nos partenaires</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>

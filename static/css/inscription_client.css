@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+*
+{
+padding : 0;
+margin : 0;
+box-sizing : border-box;
+font-family : 'Poppins', sans-serif;
+}
+
+body
+{
+display : flex;
+flex-wrap: wrap;
+height : 100vh;
+justify-content : space-evenly;
+align-items : center;
+padding: 10px;
+background-image: linear-gradient(-45deg, #20dbc2 0%, #00bfa6 100%);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+div.container
+{
+max-width : 700px;
+width: 100%;
+padding: 25px 30px;
+border-radius: 5px;
+background: whitesmoke;
+box-shadow: 4px 5px 5px black;
+}
+
+div.container div.title
+{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 15px;
+
+}
+
+div.container div.title::before
+{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(-45deg, #20dbc2 0%, #00bfa6 100%);
+}
+
+.container form .user-details
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .user-details .input-box
+{
+    width:  calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+}
+
+.user-details .input-box input
+{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border : 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box .details
+{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+}
+
+.user-details .input-box:focus,
+.user-details .input-box:valid
+{
+    border-color: black;
+
+}
+
+form .gender-details .gender-title
+{
+    font-size: 20px ;
+    font-weight: 500;
+}
+
+form .gender-details .category
+{
+    display: flex;
+    width: 80%;
+    margin:  14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label
+{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot
+{
+    height: 18px;
+    width: 18px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    cursor: pointer;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two
+{
+    border-color: #00bfa6;
+    background: #00bfa6;
+}
+
+form input[type="radio"]
+{
+    display: none;
+}
+
+form .button
+{
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input
+{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #20dbc2 0%, #00bfa6 100%);
+    box-shadow: 3px 3px 3px black;
+}
+
+form .button input:hover
+{
+    background-image: url("bg.png");
+}
+
+
+@media (max-width : 1350px)
+{
+    .svg
+    {
+        display: none;
+    }
+}
+
+@media (max-width : 584px)
+{
+
+    .container
+    {
+        max-width : 100%;
+    }
+    form .user-details .input-box
+    {
+        margin-bottom: 15px;
+        width:  100%;
+    }
+    form .gender-details .category
+    {
+        width: 100%;
+    }
+    .container form .user-details
+    {
+        max-height : 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar
+    {
+        width: 0;
+    }
+
+}
