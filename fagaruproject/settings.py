@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accueil',
     'docteur',
     'client',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

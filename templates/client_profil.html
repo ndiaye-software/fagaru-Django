@@ -35,13 +35,40 @@
         <img src="{% static 'image/profil.svg' %}" height="300px" width="350px">
 
       <div>
-
          <h1>Gérez votre profil médical</h1>
 
-
       </div>
-
    </div>
+
+    <div>
+        <form action="post" method="POST">
+        {% csrf_token %}
+        <div class="section2">
+
+            <div class="box">
+                <label><i class="fa-solid fa-user"></i></label></br>
+                    {{form}}
+            </div>
+
+             <div class="box">
+                 <label><i class="fa-solid fa-id-card"></i></label></br>
+                    {{form1}}
+            </div>
+
+             <div class="box" id="villeForm" data-villes-url="{% url 'client:ajax_load_villes' %}">
+                 <label><i class="fa-solid fa-file-medical"></i></label></br>
+                    {{form2}}
+             </div>
+
+            <div class="bouton">
+             <input type="submit" value="Enregistrer" class="sauvegarder">
+        </div>
+
+        </div>
+
+
+    </form>
+    </div>
 </main>
 
 </body>
@@ -76,5 +103,23 @@
 
 
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+     $("#id_region").change(function () {
+        const url = $("#villeForm").attr("data-villes-url");  // get the url of the `load_cities` view
+        const regionId = $(this).val();  // get the selected country ID from the HTML input
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'region_id': regionId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_ville").html(data);  // replace the contents of the city input with the data that came from the server
+            }
+        });
+    });
+</script>
 
 </html>

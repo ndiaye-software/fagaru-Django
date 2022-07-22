@@ -15,58 +15,60 @@
 
 <div class="container">
 	<div class="title">Inscription</div>
-	<form action="post">
+	<form action="post" method="POST">
+		{%csrf_token%}
 		<div class="user-details">
 			<div class="input-box">
 				<span class="details">Prénom</span>
-				<input type="text" placeholder="Entrer votre prénom" required>
+				{{firstname}}
 			</div>
 			<div class="input-box">
 				<span class="details">Nom</span>
-				<input type="text" placeholder="Entrer votre nom" required>
+				{{lastname}}
 			</div>
 
 			<div class="input-box">
 				<span class="details">Email</span>
-				<input type="email" placeholder="Entrer votre email" required>
+				{{email}}
 			</div>
 			<div class="input-box">
 				<span class="details">Téléphone</span>
-				<input type="text" placeholder="Entrer votre téléphone" required>
+				{{phone}}
 			</div>
+			<div class="input-box">
+				<span class="details">Date de naissance</span>
+				{{birthdate}}
+			</div>
+
+			<div class="input-box">
+				<span class="details">Sexe</span>
+				{{sexe}}
+			</div>
+
 			<div class="input-box">
 				<span class="details">Région</span>
-				<input type="text" placeholder="Entrer votre région" required>
+				{{region}}
 			</div>
 			<div class="input-box">
-				<span class="details">Adresse</span>
-				<input type="text" placeholder="Entrer votre adresse" required>
+				<span class="details" id="villeForm" data-villes-url="{% url 'client:ajax_load_villes' %}">Ville</span>
+				{{ville}}
 			</div>
+
+
+
 			<div class="input-box">
 				<span class="details">Mot de passe</span>
-				<input type="password" placeholder="Entrer votre mot de passe" required>
+				{{password1}}
 			</div>
+
 			<div class="input-box">
 				<span class="details">Confirmer votre mot de passe</span>
-				<input type="password" placeholder="Entrer votre mot de passe" required>
+				{{password2}}
 			</div>
+
 		</div>
-		<div class="gender-details">
-			<input type="radio" name="gender" id="dot-1">
-			<input type="radio" name="gender" id="dot-2">
-			<input type="radio" name="gender" id="dot-3">
-			<span class="gender-title">Sexe</span>
-			<div class="category">
-				<label for="dot-1">
-					<span class="dot one"></span>
-					<span class="gender">Homme</span>
-				</label>
-				<label for="dot-2">
-					<span class="dot two"></span>
-					<span class="gender">Femme</span>
-				</label>
-			</div>
-		</div>
+
+
 		<div class="button">
 			<input type="submit" value="Register">
 		</div>
@@ -75,4 +77,23 @@
 
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+     $("#id_region").change(function () {
+        const url = $("#villeForm").attr("data-villes-url");  // get the url of the `load_cities` view
+        const regionId = $(this).val();  // get the selected country ID from the HTML input
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'region_id': regionId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_ville").html(data);  // replace the contents of the city input with the data that came from the server
+            }
+        });
+    });
+</script>
+
 </html>

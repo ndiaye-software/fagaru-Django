@@ -16,14 +16,15 @@
       <div class="forms-container">
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
-            <h2 class="title">Connexion en tant qu'utilisateur</h2>
+            {%csrf_token%}
+            <h2 class="title">Vous êtes un Patient</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="nom d'utilisateur" />
+              {{email}}
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="mot de passe" />
+              {{password1}}
             </div>
             <input type="submit" value="Se connecter" class="btn solid" />
             <input type="submit" value="S'inscrire" class="btn solid" />
@@ -44,15 +45,15 @@
             </div>
           </form>
           <form action="#" class="sign-up-form">
-            <h2 class="title">Se connecter en tant que Médecin</h2>
+            <h2 class="title">Vous êtes un Médecin</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="nom d'utilisateur" />
+              {{email}}
             </div>
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="mot de passe" />
+              {{password1}}
             </div>
             <input type="submit" class="btn" value="se connecter" />
             <p class="social-text">Ou Connectez-vous avec les plateformes sociales</p>
@@ -77,12 +78,12 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3></h3>
+            <h3>Médecin ?</h3>
             <p>
               Bienvenue sur votre plateforme FAGARU! Connectez-vous pour accéder à votre compte :)
             </p>
             <button class="btn transparent" id="sign-up-btn">
-              en tant que Médecin
+              Médecin
             </button>
           </div>
           <img src="{% static 'image/patient_svg.svg' %}" class="image" alt="" />
@@ -94,7 +95,7 @@
               Bienvenue sur votre plateforme FAGARU! Connectez-vous pour accéder à votre compte :)
             </p>
             <button class="btn transparent" id="sign-in-btn">
-              en tant qu'utilisateur
+              Patient
             </button>
           </div>
           <img src="{% static 'image/medecine_svg.svg' %}" class="image" alt="" />
